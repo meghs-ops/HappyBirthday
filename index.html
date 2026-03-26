@@ -31,19 +31,31 @@
     }
 
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #ff4d6d;
       color: white;
       cursor: pointer;
       margin-top: 20px;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     img {
       border-radius: 20px;
       margin-top: 20px;
+    }
+
+    /* Hidden section animation */
+    #surprise {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #surprise.show {
+      display: block;
+      opacity: 1;
     }
 
     @keyframes fall {
@@ -59,45 +71,34 @@
 
   <h1>Happy Birthday My Baby 🎂❤️</h1>
 
-  <!-- FIRST CARD -->
   <div class="card">
     <p>You make my world brighter every day ✨</p>
     <p>I’m so lucky to have you 💕</p>
 
-    <button onclick="showMessage()">Click for a surprise 💌</button>
+    <button onclick="showSurprise()">Open this surprise 💖</button>
 
-    <p id="hiddenMessage" style="display:none;">
-      I love you more than words can explain ❤️
-    </p>
+    <!-- Hidden Surprise -->
+    <div id="surprise">
+      <p style="margin-top:20px;">
+        You’re not just someone I love… you’re someone who makes everything feel lighter.  
+        The way you exist in my life — it’s rare, it’s special, and it means more to me than I can ever fully explain.  
+
+        I don’t say this enough, but you’re one of the best things that ever happened to me.  
+        And I hope today reminds you how deeply you’re loved… by me ❤️
+      </p>
+
+      <!-- Kissing GIF -->
+      <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="250">
+    </div>
   </div>
 
-  <!-- SECOND CARD -->
-  <div class="card">
-    <button onclick="showLove()">Read this 💖</button>
-
-    <p id="loveMessage" style="display:none; margin-top:20px;">
-      You’re not just someone I love… you’re someone who makes everything feel lighter.  
-      The way you exist in my life — it’s rare, it’s special, and it means more to me than I can ever fully explain.  
-
-      I don’t say this enough, but you’re one of the best things that ever happened to me.  
-      And I hope today reminds you how deeply you’re loved… by me ❤️
-    </p>
-
-    <!-- Cute GIF -->
-<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" 
-     width="250" 
-     style="border-radius:20px; margin-top:20px;">  </div>
-
   <script>
-    function showMessage() {
-      document.getElementById("hiddenMessage").style.display = "block";
+    function showSurprise() {
+      const el = document.getElementById("surprise");
+      el.classList.add("show");
     }
 
-    function showLove() {
-      document.getElementById("loveMessage").style.display = "block";
-    }
-
-    // Floating hearts animation
+    // Floating hearts
     setInterval(() => {
       const heart = document.createElement("div");
       heart.innerHTML = "❤️";
