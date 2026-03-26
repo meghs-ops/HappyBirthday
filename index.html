@@ -46,7 +46,7 @@
       margin-top: 20px;
     }
 
-    /* Hidden section animation */
+    /* Hidden section */
     #surprise {
       display: none;
       opacity: 0;
@@ -56,6 +56,12 @@
     #surprise.show {
       display: block;
       opacity: 1;
+    }
+
+    /* GIF fade */
+    #kissGif {
+      opacity: 0;
+      transition: opacity 1.5s ease;
     }
 
     @keyframes fall {
@@ -84,11 +90,16 @@
         The way you exist in my life — it’s rare, it’s special, and it means more to me than I can ever fully explain.  
 
         I don’t say this enough, but you’re one of the best things that ever happened to me.  
-        And I hope today reminds you how deeply you’re loved… by me ❤️
+        And I hope today reminds you how deeply you’re loved… by me ❤️  
+
+        <br><br>
+        The way you care about me in little ways… it stays with me more than you think 💖
       </p>
 
-      <!-- Kissing GIF -->
-      <img src="https://i.pinimg.com/originals/4e/7d/9e/4e7d9e0f0f5b7f5c2b6c8b6d7c7e6c5c.gif" width="250">
+      <!-- Romantic Kissing GIF -->
+      <img id="kissGif"
+           src="https://media.tenor.com/6kZy9d7Fq5AAAAAC/cute-love-kiss.gif"
+           width="250">
     </div>
   </div>
 
@@ -96,6 +107,11 @@
     function showSurprise() {
       const el = document.getElementById("surprise");
       el.classList.add("show");
+
+      const gif = document.getElementById("kissGif");
+      setTimeout(() => {
+        gif.style.opacity = "1";
+      }, 500);
     }
 
     // Floating hearts
