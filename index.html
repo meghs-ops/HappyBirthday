@@ -48,13 +48,14 @@
 
     /* Hidden section */
     #surprise {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
       opacity: 0;
-      transition: opacity 1s ease;
+      transition: all 1s ease;
     }
 
     #surprise.show {
-      display: block;
+      max-height: 500px;
       opacity: 1;
     }
 
@@ -96,9 +97,9 @@
         The way you care about me in little ways… it stays with me more than you think 💖
       </p>
 
-      <!-- Romantic Kissing GIF -->
+      <!-- WORKING GIF -->
       <img id="kissGif"
-           src="https://media.tenor.com/6kZy9d7Fq5AAAAAC/cute-love-kiss.gif"
+           src="https://media.tenor.com/Ws4kG2L3C6gAAAAC/love-kiss.gif"
            width="250">
     </div>
   </div>
